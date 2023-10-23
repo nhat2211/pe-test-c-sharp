@@ -1,0 +1,14 @@
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\bin\Debug\net7.0\AirConditionBusiness.deps.json
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\bin\Debug\net7.0\AirConditionBusiness.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\bin\Debug\net7.0\AirConditionBusiness.pdb
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.GeneratedMSBuildEditorConfig.editorconfig
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.AssemblyInfoInputs.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.AssemblyInfo.cs
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.csproj.CoreCompileInputs.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\refint\AirConditionBusiness.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.pdb
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\ref\AirConditionBusiness.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\bin\Debug\net7.0\AirConditionBusiness.runtimeconfig.json
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.csproj.AssemblyReference.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionBusiness\obj\Debug\net7.0\AirConditionBusiness.genruntimeconfig.cache

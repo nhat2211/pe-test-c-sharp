@@ -1,0 +1,17 @@
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.exe
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.deps.json
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.runtimeconfig.json
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.pdb
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.frmAirConditionerManage.resources
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.frmLogin.resources
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.csproj.GenerateResource.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.GeneratedMSBuildEditorConfig.editorconfig
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.AssemblyInfoInputs.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.AssemblyInfo.cs
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.csproj.CoreCompileInputs.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\refint\AirConditionerShop_TranQuangNhat.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.pdb
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.genruntimeconfig.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\ref\AirConditionerShop_TranQuangNhat.dll
