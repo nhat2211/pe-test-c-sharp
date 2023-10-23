@@ -1,4 +1,5 @@
 ﻿using AirConditionBusiness.Models;
+using System.Runtime.InteropServices;
 
 namespace DataAccess
 {
@@ -6,9 +7,12 @@ namespace DataAccess
     {
 
         private static AirConditionDAO instance;
-        private AirConditionerShop2023DbContext context;
+        private AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
 
-        private AirConditionDAO(){}
+        private AirConditionDAO()
+        {
+
+        }
 
         public static AirConditionDAO Instance()
         {
@@ -18,6 +22,22 @@ namespace DataAccess
             }
             return instance;
         }
+
+        public void create(AirConditioner airConditioner)
+        {
+            try
+            {
+                context.AirConditioners.Add(airConditioner);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
+        }
+
 
 
 

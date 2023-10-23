@@ -1,0 +1,5 @@
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
