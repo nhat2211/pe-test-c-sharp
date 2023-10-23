@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             label2 = new Label();
-            txtUserName = new TextBox();
+            txtEmail = new TextBox();
             txtPassword = new TextBox();
             btnLogin = new Button();
             SuspendLayout();
@@ -40,9 +40,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(160, 149);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(46, 20);
             label1.TabIndex = 0;
-            label1.Text = "Username";
+            label1.Text = "Email";
             // 
             // label2
             // 
@@ -53,12 +53,12 @@
             label2.TabIndex = 1;
             label2.Text = "Password";
             // 
-            // txtUserName
+            // txtEmail
             // 
-            txtUserName.Location = new Point(305, 149);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(230, 27);
-            txtUserName.TabIndex = 2;
+            txtEmail.Location = new Point(305, 149);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(230, 27);
+            txtEmail.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -75,6 +75,7 @@
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // frmLogin
             // 
@@ -83,7 +84,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
-            Controls.Add(txtUserName);
+            Controls.Add(txtEmail);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmLogin";
@@ -96,7 +97,7 @@
 
         private Label label1;
         private Label label2;
-        private TextBox txtUserName;
+        private TextBox txtEmail;
         private TextBox txtPassword;
         private Button btnLogin;
     }

@@ -9,9 +9,7 @@ namespace DataAccess.Repository
 {
     internal interface IStaffMemberRepository
     {
-        public StaffMember findStaffByUsername(String userName);
-
-        public StaffMember findStaffByUsernameAndPassword(String userName, String password);
+        public StaffMember findStaffByEmailAndPassword(String email, String password);
 
     }
 }
