@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{04BBB101-F53C-42E9-8E37-8168CA3B1E80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirConditionBusiness", "AirConditionBusiness\AirConditionBusiness.csproj", "{ABFDBA1D-4DF1-4C22-882A-8A4562B1E055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirConditionBusiness", "AirConditionBusiness\AirConditionBusiness.csproj", "{ABFDBA1D-4DF1-4C22-882A-8A4562B1E055}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{B10FDDB6-75E3-4AE6-AFF7-8D16C7A48496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{8E19EE58-882E-420D-AE1B-9C53646946A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{8E19EE58-882E-420D-AE1B-9C53646946A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

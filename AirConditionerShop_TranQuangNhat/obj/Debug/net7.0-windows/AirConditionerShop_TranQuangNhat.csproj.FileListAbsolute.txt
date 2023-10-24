@@ -57,3 +57,10 @@ D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AirConditionBusiness.pdb
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.csproj.AssemblyReference.cache
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.csproj.CopyComplete
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\appsettings.json
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll

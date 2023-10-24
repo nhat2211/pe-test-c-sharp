@@ -13,3 +13,4 @@ D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.dll
 D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
 D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\DataAccess.pdb
 D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\DataAccess\bin\Debug\net7.0\appsettings.json
