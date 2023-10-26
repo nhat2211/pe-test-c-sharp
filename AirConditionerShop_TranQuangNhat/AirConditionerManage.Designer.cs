@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            txtAirConditionName = new TextBox();
+            txtSoundPress = new TextBox();
+            txtSuppId = new TextBox();
+            txtDollar = new TextBox();
+            txtFeatFun = new TextBox();
+            txtQuantity = new TextBox();
+            txtWarrantly = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,62 +42,71 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvAirCon = new DataGridView();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label8 = new Label();
+            txtSupplyName = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvAirCon).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtAirConditionName
             // 
-            textBox1.Location = new Point(244, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            txtAirConditionName.Location = new Point(244, 40);
+            txtAirConditionName.Name = "txtAirConditionName";
+            txtAirConditionName.ReadOnly = true;
+            txtAirConditionName.Size = new Size(125, 27);
+            txtAirConditionName.TabIndex = 0;
             // 
-            // textBox2
+            // txtSoundPress
             // 
-            textBox2.Location = new Point(244, 115);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 1;
+            txtSoundPress.Location = new Point(244, 115);
+            txtSoundPress.Name = "txtSoundPress";
+            txtSoundPress.ReadOnly = true;
+            txtSoundPress.Size = new Size(125, 27);
+            txtSoundPress.TabIndex = 1;
             // 
-            // textBox3
+            // txtSuppId
             // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(244, 254);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 2;
+            txtSuppId.Enabled = false;
+            txtSuppId.Location = new Point(244, 254);
+            txtSuppId.Name = "txtSuppId";
+            txtSuppId.ReadOnly = true;
+            txtSuppId.Size = new Size(125, 27);
+            txtSuppId.TabIndex = 2;
             // 
-            // textBox4
+            // txtDollar
             // 
-            textBox4.Location = new Point(628, 186);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 3;
+            txtDollar.Location = new Point(628, 186);
+            txtDollar.Name = "txtDollar";
+            txtDollar.ReadOnly = true;
+            txtDollar.Size = new Size(125, 27);
+            txtDollar.TabIndex = 3;
             // 
-            // textBox5
+            // txtFeatFun
             // 
-            textBox5.Location = new Point(628, 111);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 4;
+            txtFeatFun.Location = new Point(628, 111);
+            txtFeatFun.Name = "txtFeatFun";
+            txtFeatFun.ReadOnly = true;
+            txtFeatFun.Size = new Size(125, 27);
+            txtFeatFun.TabIndex = 4;
             // 
-            // textBox6
+            // txtQuantity
             // 
-            textBox6.Location = new Point(244, 190);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 5;
+            txtQuantity.Location = new Point(244, 190);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.ReadOnly = true;
+            txtQuantity.Size = new Size(125, 27);
+            txtQuantity.TabIndex = 5;
             // 
-            // textBox7
+            // txtWarrantly
             // 
-            textBox7.Location = new Point(628, 36);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 6;
+            txtWarrantly.Location = new Point(628, 36);
+            txtWarrantly.Name = "txtWarrantly";
+            txtWarrantly.ReadOnly = true;
+            txtWarrantly.Size = new Size(125, 27);
+            txtWarrantly.TabIndex = 6;
             // 
             // label1
             // 
@@ -163,15 +172,17 @@
             label7.TabIndex = 13;
             label7.Text = "SupplierId";
             // 
-            // dataGridView1
+            // dgvAirCon
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(104, 416);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(922, 265);
-            dataGridView1.TabIndex = 14;
+            dgvAirCon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAirCon.Location = new Point(104, 416);
+            dgvAirCon.Name = "dgvAirCon";
+            dgvAirCon.RowHeadersWidth = 51;
+            dgvAirCon.RowTemplate.Height = 29;
+            dgvAirCon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAirCon.Size = new Size(922, 265);
+            dgvAirCon.TabIndex = 14;
+            dgvAirCon.SelectionChanged += dgvAirCon_SelectionChanged;
             // 
             // button1
             // 
@@ -200,15 +211,35 @@
             button3.Text = "Update";
             button3.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(502, 261);
+            label8.Name = "label8";
+            label8.Size = new Size(104, 20);
+            label8.TabIndex = 19;
+            label8.Text = "SupplierName";
+            // 
+            // txtSupplyName
+            // 
+            txtSupplyName.Enabled = false;
+            txtSupplyName.Location = new Point(628, 254);
+            txtSupplyName.Name = "txtSupplyName";
+            txtSupplyName.ReadOnly = true;
+            txtSupplyName.Size = new Size(125, 27);
+            txtSupplyName.TabIndex = 18;
+            // 
             // frmAirConditionerManage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1107, 705);
+            Controls.Add(label8);
+            Controls.Add(txtSupplyName);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvAirCon);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -216,29 +247,30 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtWarrantly);
+            Controls.Add(txtQuantity);
+            Controls.Add(txtFeatFun);
+            Controls.Add(txtDollar);
+            Controls.Add(txtSuppId);
+            Controls.Add(txtSoundPress);
+            Controls.Add(txtAirConditionName);
             Name = "frmAirConditionerManage";
             Text = "AirConditionerManage";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmAirConditionerManage_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvAirCon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txtAirConditionName;
+        private TextBox txtSoundPress;
+        private TextBox txtSuppId;
+        private TextBox txtDollar;
+        private TextBox txtFeatFun;
+        private TextBox txtQuantity;
+        private TextBox txtWarrantly;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -246,9 +278,11 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvAirCon;
         private Button button1;
         private Button button2;
         private Button button3;
+        private Label label8;
+        private TextBox txtSupplyName;
     }
 }

@@ -57,12 +57,12 @@ namespace DataAccess
             }
         }
 
-        public void delete(AirConditioner airConditioner)
+        public void delete(int id)
         {
             try
             {
                 using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
-                var air = context.AirConditioners.SingleOrDefault(a => a.AirConditionerId == airConditioner.AirConditionerId);
+                var air = context.AirConditioners.SingleOrDefault(a => a.AirConditionerId == id);
                 context.AirConditioners.Remove(air);
                 context.SaveChanges();
 
@@ -72,6 +72,45 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<AirConditioner> findAll()
+        {
+            List<AirConditioner> airs;
+            try
+            {
+                using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
+                airs = context.AirConditioners.ToList();
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+
+            }
+
+            return airs;
+
+        }
+
+        public AirConditioner findById(int id)
+        {
+            AirConditioner air = null;
+            try
+            {
+                using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
+                air = context.AirConditioners.SingleOrDefault(a => a.AirConditionerId == id);
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+
+            }
+
+            return air;
+        }
+
+
 
 
 

@@ -9,30 +9,30 @@ namespace DataAccess.Repository
 {
     public class AirConditionerRepository : IAirConditionerRepository
     {
-        AirConditionDAO airConditionDAO;
+       
         public void create(AirConditioner airConditioner)
         {
-            throw new NotImplementedException();
+            AirConditionDAO.Instance.create(airConditioner);
         }
 
         public void delete(int id)
         {
-            throw new NotImplementedException();
+            AirConditionDAO.Instance.delete(id);
         }
 
         public List<AirConditioner> findAll()
         {
-            throw new NotImplementedException();
+            return AirConditionDAO.Instance.findAll();
         }
 
         public AirConditioner findById(int id)
         {
-            throw new NotImplementedException();
+            return AirConditionDAO.Instance.findById(id);
         }
 
         public void update(AirConditioner airConditioner)
         {
-            throw new NotImplementedException();
+            AirConditionDAO.Instance.update(airConditioner);
         }
     }
 }
