@@ -38,12 +38,6 @@ namespace AirConditionerShop_TranQuangNhat
         {
 
             var airs = airConditionerRepository.findAll();
-            //foreach (var air in airs)
-            //{
-            //    txtSuppId.Text = air.Supplier.SupplierId;
-
-            //    ;                air.Supplier.SupplierName
-            //}
             airSource = new BindingSource();
 
             airSource.DataSource = airs;
@@ -79,8 +73,9 @@ namespace AirConditionerShop_TranQuangNhat
                 btnCreate.Enabled = true;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                loadAirCondition();
             }
-            loadAirCondition();
+            
         }
 
         private void dgvAirCon_SelectionChanged(object sender, EventArgs e)
