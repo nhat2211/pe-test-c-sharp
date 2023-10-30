@@ -50,6 +50,9 @@
             txtSupplyName = new TextBox();
             txtAirConditionId = new TextBox();
             label9 = new Label();
+            btnSearch = new Button();
+            txtFeaFunSearch = new TextBox();
+            txtQuantitySearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvAirCon).BeginInit();
             SuspendLayout();
             // 
@@ -252,11 +255,42 @@
             label9.TabIndex = 21;
             label9.Text = "AirConditionId";
             // 
+            // btnSearch
+            // 
+            btnSearch.Enabled = false;
+            btnSearch.Location = new Point(932, 175);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 29);
+            btnSearch.TabIndex = 22;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtFeaFunSearch
+            // 
+            txtFeaFunSearch.Enabled = false;
+            txtFeaFunSearch.Location = new Point(884, 55);
+            txtFeaFunSearch.Name = "txtFeaFunSearch";
+            txtFeaFunSearch.PlaceholderText = "FeatureFunction";
+            txtFeaFunSearch.Size = new Size(175, 27);
+            txtFeaFunSearch.TabIndex = 23;
+            // 
+            // txtQuantitySearch
+            // 
+            txtQuantitySearch.Enabled = false;
+            txtQuantitySearch.Location = new Point(884, 117);
+            txtQuantitySearch.Name = "txtQuantitySearch";
+            txtQuantitySearch.PlaceholderText = "Quantity";
+            txtQuantitySearch.Size = new Size(175, 27);
+            txtQuantitySearch.TabIndex = 24;
+            // 
             // frmAirConditionerManage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1107, 705);
+            Controls.Add(txtQuantitySearch);
+            Controls.Add(txtFeaFunSearch);
+            Controls.Add(btnSearch);
             Controls.Add(label9);
             Controls.Add(txtAirConditionId);
             Controls.Add(label8);
@@ -311,5 +345,8 @@
         private TextBox txtSupplyName;
         private TextBox txtAirConditionId;
         private Label label9;
+        private Button btnSearch;
+        private TextBox txtFeaFunSearch;
+        private TextBox txtQuantitySearch;
     }
 }

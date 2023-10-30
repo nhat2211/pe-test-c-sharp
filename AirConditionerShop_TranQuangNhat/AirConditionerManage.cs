@@ -73,9 +73,12 @@ namespace AirConditionerShop_TranQuangNhat
                 btnCreate.Enabled = true;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                txtFeaFunSearch.Enabled = true;
+                txtQuantitySearch.Enabled = true;
+                btnSearch.Enabled = true;
                 loadAirCondition();
             }
-            
+
         }
 
         private void dgvAirCon_SelectionChanged(object sender, EventArgs e)
