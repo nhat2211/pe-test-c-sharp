@@ -43,9 +43,9 @@
             label6 = new Label();
             label7 = new Label();
             dgvAirCon = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnCreate = new Button();
+            btnDelete = new Button();
+            btnUpdate = new Button();
             label8 = new Label();
             txtSupplyName = new TextBox();
             txtAirConditionId = new TextBox();
@@ -187,32 +187,35 @@
             dgvAirCon.TabIndex = 14;
             dgvAirCon.SelectionChanged += dgvAirCon_SelectionChanged;
             // 
-            // button1
+            // btnCreate
             // 
-            button1.Location = new Point(344, 354);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 15;
-            button1.Text = "Create";
-            button1.UseVisualStyleBackColor = true;
+            btnCreate.Enabled = false;
+            btnCreate.Location = new Point(344, 354);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(94, 29);
+            btnCreate.TabIndex = 15;
+            btnCreate.Text = "Create";
+            btnCreate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDelete
             // 
-            button2.Location = new Point(608, 354);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 16;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            btnDelete.Enabled = false;
+            btnDelete.Location = new Point(608, 354);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 16;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnUpdate
             // 
-            button3.Location = new Point(485, 354);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 17;
-            button3.Text = "Update";
-            button3.UseVisualStyleBackColor = true;
+            btnUpdate.Enabled = false;
+            btnUpdate.Location = new Point(485, 354);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(94, 29);
+            btnUpdate.TabIndex = 17;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -258,9 +261,9 @@
             Controls.Add(txtAirConditionId);
             Controls.Add(label8);
             Controls.Add(txtSupplyName);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
             Controls.Add(dgvAirCon);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -301,9 +304,9 @@
         private Label label6;
         private Label label7;
         private DataGridView dgvAirCon;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnCreate;
+        private Button btnDelete;
+        private Button btnUpdate;
         private Label label8;
         private TextBox txtSupplyName;
         private TextBox txtAirConditionId;

@@ -1,3 +1,5 @@
+using AirConditionBusiness.Models;
+using DataAccess.enums;
 using DataAccess.Repository;
 
 namespace AirConditionerShop_TranQuangNhat
@@ -12,15 +14,17 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!authenticate(txtEmail.Text, txtPassword.Text))
+            var authenStaff = authenticate(txtEmail.Text, txtPassword.Text);
+
+            if (authenStaff == null)
             {
-                MessageBox.Show("Login Fail!");
+                MessageBox.Show("You have no permission to access this function!");
 
             }
             else
             {
                 this.Hide();
-                frmAirConditionerManage frmAirConditionerManage = new frmAirConditionerManage();
+                frmAirConditionerManage frmAirConditionerManage = new frmAirConditionerManage(authorized(authenStaff));
                 frmAirConditionerManage.ShowDialog();
                 this.Close();
             }
@@ -29,10 +33,19 @@ namespace AirConditionerShop_TranQuangNhat
 
         }
 
-        private Boolean authenticate(string username, string password)
+        private StaffMember authenticate(string username, string password)
         {
-            return staffMember.findStaffByEmailAndPassword(username, password) != null ?
-                true : false;
+            return staffMember.findStaffByEmailAndPassword(username, password);
+         
         }
+
+        private Boolean authorized(StaffMember staff)
+        {
+           return staff.Role.Equals((int)Roles.Administrator) ? true : false;
+        }
+
+      
+
+      
     }
 }

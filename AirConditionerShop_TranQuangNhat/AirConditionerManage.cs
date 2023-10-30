@@ -17,9 +17,16 @@ namespace AirConditionerShop_TranQuangNhat
     {
         private AirConditionerRepository airConditionerRepository = new AirConditionerRepository();
         private BindingSource airSource;
+        private Boolean isAuthor;
         public frmAirConditionerManage()
         {
             InitializeComponent();
+        }
+
+        public frmAirConditionerManage(Boolean isAuthor)
+        {
+            InitializeComponent();
+            this.isAuthor = isAuthor;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -67,6 +74,12 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void frmAirConditionerManage_Load(object sender, EventArgs e)
         {
+            if (isAuthor)
+            {
+                btnCreate.Enabled = true;
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
             loadAirCondition();
         }
 
