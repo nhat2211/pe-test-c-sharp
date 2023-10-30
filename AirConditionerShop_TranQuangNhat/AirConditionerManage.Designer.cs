@@ -264,6 +264,7 @@
             btnSearch.TabIndex = 22;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtFeaFunSearch
             // 

@@ -40,5 +40,10 @@ namespace DataAccess.Repository
             return AirConditionDAO.Instance.findCompanyByAirConditoner(supplierId);
 
         }
+
+        public List<AirConditioner> findByFeatureAndQuantity(string feature, int quantity)
+        {
+            return AirConditionDAO.Instance.findByFeatureAndQuantity(feature, quantity);
+        }
     }
 }

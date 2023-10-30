@@ -66,6 +66,39 @@ namespace AirConditionerShop_TranQuangNhat
 
         }
 
+        private void loadAirSearch()
+        {
+
+            var airs = airConditionerRepository.findByFeatureAndQuantity(txtFeaFunSearch.Text,
+               int.Parse(txtQuantitySearch.Text));
+            airSource = new BindingSource();
+
+            airSource.DataSource = airs;
+
+            txtAirConditionId.DataBindings.Clear();
+            txtAirConditionName.DataBindings.Clear();
+            txtWarrantly.DataBindings.Clear();
+            txtSoundPress.DataBindings.Clear();
+            txtFeatFun.DataBindings.Clear();
+            txtQuantity.DataBindings.Clear();
+            txtDollar.DataBindings.Clear();
+            txtSuppId.DataBindings.Clear();
+            txtSupplyName.DataBindings.Clear();
+
+
+            txtAirConditionName.DataBindings.Add("Text", airSource, "AirConditionerName");
+            txtAirConditionId.DataBindings.Add("Text", airSource, "AirConditionerId");
+            txtWarrantly.DataBindings.Add("Text", airSource, "Warranty");
+            txtSoundPress.DataBindings.Add("Text", airSource, "SoundPressureLevel");
+            txtFeatFun.DataBindings.Add("Text", airSource, "FeatureFunction");
+            txtQuantity.DataBindings.Add("Text", airSource, "Quantity");
+            txtDollar.DataBindings.Add("Text", airSource, "DollarPrice");
+
+            dgvAirCon.DataSource = null;
+            dgvAirCon.DataSource = airSource;
+
+        }
+
         private void frmAirConditionerManage_Load(object sender, EventArgs e)
         {
             if (isAuthor)
@@ -90,6 +123,12 @@ namespace AirConditionerShop_TranQuangNhat
             txtSuppId.Text = supplyCompany.SupplierId;
             txtSupplyName.Text = supplyCompany.SupplierName;
 
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+           loadAirSearch();
 
         }
     }

@@ -21,5 +21,7 @@ namespace DataAccess.Repository
 
         public SupplierCompany findCompanyByAirConditoner(string id);
 
+        public List<AirConditioner> findByFeatureAndQuantity(string feature, int quantity);
+
     }
 }
