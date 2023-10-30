@@ -1,4 +1,5 @@
 ﻿using AirConditionBusiness.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Runtime.InteropServices;
 
 namespace DataAccess
@@ -37,7 +38,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(ex.Message, ex);
             }
 
 
@@ -108,6 +109,14 @@ namespace DataAccess
             }
 
             return air;
+        }
+
+        public SupplierCompany findCompanyByAirConditoner(string supplierId)
+        {
+            using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
+            
+            var supplierCompany = context.SupplierCompanies.ToList().Find(sup => sup.SupplierId.Equals(supplierId));
+            return supplierCompany;
         }
 
 

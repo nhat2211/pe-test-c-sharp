@@ -48,6 +48,8 @@
             button3 = new Button();
             label8 = new Label();
             txtSupplyName = new TextBox();
+            txtAirConditionId = new TextBox();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvAirCon).BeginInit();
             SuspendLayout();
             // 
@@ -174,6 +176,7 @@
             // 
             // dgvAirCon
             // 
+            dgvAirCon.AllowUserToAddRows = false;
             dgvAirCon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAirCon.Location = new Point(104, 416);
             dgvAirCon.Name = "dgvAirCon";
@@ -229,11 +232,30 @@
             txtSupplyName.Size = new Size(125, 27);
             txtSupplyName.TabIndex = 18;
             // 
+            // txtAirConditionId
+            // 
+            txtAirConditionId.Location = new Point(244, 312);
+            txtAirConditionId.Name = "txtAirConditionId";
+            txtAirConditionId.ReadOnly = true;
+            txtAirConditionId.Size = new Size(125, 27);
+            txtAirConditionId.TabIndex = 20;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(92, 319);
+            label9.Name = "label9";
+            label9.Size = new Size(106, 20);
+            label9.TabIndex = 21;
+            label9.Text = "AirConditionId";
+            // 
             // frmAirConditionerManage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1107, 705);
+            Controls.Add(label9);
+            Controls.Add(txtAirConditionId);
             Controls.Add(label8);
             Controls.Add(txtSupplyName);
             Controls.Add(button3);
@@ -284,5 +306,7 @@
         private Button button3;
         private Label label8;
         private TextBox txtSupplyName;
+        private TextBox txtAirConditionId;
+        private Label label9;
     }
 }

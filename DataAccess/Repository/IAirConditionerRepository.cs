@@ -19,5 +19,7 @@ namespace DataAccess.Repository
         public void update(AirConditioner airConditioner);
         public void delete(int id);
 
+        public SupplierCompany findCompanyByAirConditoner(string id);
+
     }
 }

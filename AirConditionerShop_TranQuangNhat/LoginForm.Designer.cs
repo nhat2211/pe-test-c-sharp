@@ -57,6 +57,7 @@
             // 
             txtEmail.Location = new Point(305, 149);
             txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(230, 27);
             txtEmail.TabIndex = 2;
             // 
@@ -64,6 +65,7 @@
             // 
             txtPassword.Location = new Point(305, 209);
             txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(230, 27);
             txtPassword.TabIndex = 3;
             // 

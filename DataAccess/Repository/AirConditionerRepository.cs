@@ -34,5 +34,11 @@ namespace DataAccess.Repository
         {
             AirConditionDAO.Instance.update(airConditioner);
         }
+
+        public SupplierCompany findCompanyByAirConditoner(string supplierId)
+        {
+            return AirConditionDAO.Instance.findCompanyByAirConditoner(supplierId);
+
+        }
     }
 }

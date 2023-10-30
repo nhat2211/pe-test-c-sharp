@@ -1,4 +1,5 @@
-﻿using DataAccess.Repository;
+﻿using AirConditionBusiness.Models;
+using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace AirConditionerShop_TranQuangNhat
 
     public partial class frmAirConditionerManage : Form
     {
+        private AirConditionerRepository airConditionerRepository = new AirConditionerRepository();
         private BindingSource airSource;
         public frmAirConditionerManage()
         {
@@ -27,7 +29,7 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void loadAirCondition()
         {
-            AirConditionerRepository airConditionerRepository = new AirConditionerRepository();
+
             var airs = airConditionerRepository.findAll();
             //foreach (var air in airs)
             //{
@@ -39,6 +41,7 @@ namespace AirConditionerShop_TranQuangNhat
 
             airSource.DataSource = airs;
 
+            txtAirConditionId.DataBindings.Clear();
             txtAirConditionName.DataBindings.Clear();
             txtWarrantly.DataBindings.Clear();
             txtSoundPress.DataBindings.Clear();
@@ -48,7 +51,9 @@ namespace AirConditionerShop_TranQuangNhat
             txtSuppId.DataBindings.Clear();
             txtSupplyName.DataBindings.Clear();
 
+
             txtAirConditionName.DataBindings.Add("Text", airSource, "AirConditionerName");
+            txtAirConditionId.DataBindings.Add("Text", airSource, "AirConditionerId");
             txtWarrantly.DataBindings.Add("Text", airSource, "Warranty");
             txtSoundPress.DataBindings.Add("Text", airSource, "SoundPressureLevel");
             txtFeatFun.DataBindings.Add("Text", airSource, "FeatureFunction");
@@ -67,7 +72,14 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void dgvAirCon_SelectionChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(txtAirConditionName.Text);
+            //MessageBox.Show(txtAirConditionName.Text);
+            AirConditioner airConditioner = airConditionerRepository.findById(int.Parse(txtAirConditionId.Text));
+            var supplyCompany = airConditionerRepository.findCompanyByAirConditoner(airConditioner.SupplierId);
+
+            txtSuppId.Text = supplyCompany.SupplierId;
+            txtSupplyName.Text = supplyCompany.SupplierName;
+
+
         }
     }
 }
