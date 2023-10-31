@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "z2tDRFDDkWEokAlOMvXnCQrANItV1chYCQ69Ib0SIRFA5ymImKD5z7fxS6szEkjgCwUeqiYHm7ItrModoTlYBA==",
+  "dgSpecHash": "9YgK/X3NAo4fHbZJSjPf0ZrDlloi0MJxdGvt6wQtEE/wGZvcr0qLsGLAIoi3PI3doUzP3A+GvxIVEntAWiWeUQ==",
   "success": true,
   "projectFilePath": "D:\\FU\\C#\\demo\\pe-test-c-sharp.git\\AirConditionerShop_TranQuangNhat\\AirConditionerShop_TranQuangNhat.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.12\\microsoft.entityframeworkcore.7.0.12.nupkg.sha512",

@@ -192,7 +192,6 @@
             // 
             // btnCreate
             // 
-            btnCreate.Enabled = false;
             btnCreate.Location = new Point(344, 354);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(94, 29);
@@ -202,7 +201,6 @@
             // 
             // btnDelete
             // 
-            btnDelete.Enabled = false;
             btnDelete.Location = new Point(608, 354);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
@@ -212,7 +210,6 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Enabled = false;
             btnUpdate.Location = new Point(485, 354);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
@@ -257,7 +254,6 @@
             // 
             // btnSearch
             // 
-            btnSearch.Enabled = false;
             btnSearch.Location = new Point(932, 175);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 29);
@@ -268,7 +264,6 @@
             // 
             // txtFeaFunSearch
             // 
-            txtFeaFunSearch.Enabled = false;
             txtFeaFunSearch.Location = new Point(884, 55);
             txtFeaFunSearch.Name = "txtFeaFunSearch";
             txtFeaFunSearch.PlaceholderText = "FeatureFunction";
@@ -277,7 +272,6 @@
             // 
             // txtQuantitySearch
             // 
-            txtQuantitySearch.Enabled = false;
             txtQuantitySearch.Location = new Point(884, 117);
             txtQuantitySearch.Name = "txtQuantitySearch";
             txtQuantitySearch.PlaceholderText = "Quantity";

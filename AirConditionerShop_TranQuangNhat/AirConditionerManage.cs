@@ -38,6 +38,7 @@ namespace AirConditionerShop_TranQuangNhat
         {
 
             var airs = airConditionerRepository.findAll();
+
             airSource = new BindingSource();
 
             airSource.DataSource = airs;
@@ -60,6 +61,7 @@ namespace AirConditionerShop_TranQuangNhat
             txtFeatFun.DataBindings.Add("Text", airSource, "FeatureFunction");
             txtQuantity.DataBindings.Add("Text", airSource, "Quantity");
             txtDollar.DataBindings.Add("Text", airSource, "DollarPrice");
+            txtSupplyName.DataBindings.Add("Text", airSource, "Supplier.SupplierName");
 
             dgvAirCon.DataSource = null;
             dgvAirCon.DataSource = airSource;
@@ -101,16 +103,7 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void frmAirConditionerManage_Load(object sender, EventArgs e)
         {
-            if (isAuthor)
-            {
-                btnCreate.Enabled = true;
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
-                txtFeaFunSearch.Enabled = true;
-                txtQuantitySearch.Enabled = true;
-                btnSearch.Enabled = true;
-                loadAirCondition();
-            }
+            loadAirCondition();
 
         }
 
@@ -128,7 +121,7 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           loadAirSearch();
+            loadAirSearch();
 
         }
     }

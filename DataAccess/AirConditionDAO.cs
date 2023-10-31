@@ -77,10 +77,12 @@ namespace DataAccess
         public List<AirConditioner> findAll()
         {
             List<AirConditioner> airs;
+            IQueryable<AirConditioner> airConditioners = null;
             try
             {
                 using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
-                airs = context.AirConditioners.ToList();
+                airConditioners = context.AirConditioners.Include(air=> air.Supplier);
+                airs = airConditioners.ToList();
 
             }
             catch(Exception ex)

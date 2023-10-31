@@ -18,13 +18,17 @@ namespace AirConditionerShop_TranQuangNhat
 
             if (authenStaff == null)
             {
-                MessageBox.Show("You have no permission to access this function!");
+                //You have no permission to access this function
+                MessageBox.Show("Login fail!");
 
+            }else if (authenStaff != null && !authenStaff.Role.Equals((int)Roles.Administrator))
+            {
+                MessageBox.Show("You have no permission to access this function");
             }
-            else
+            else if (authenStaff.Role.Equals((int)Roles.Administrator))
             {
                 this.Hide();
-                frmAirConditionerManage frmAirConditionerManage = new frmAirConditionerManage(authorized(authenStaff));
+                frmAirConditionerManage frmAirConditionerManage = new frmAirConditionerManage();
                 frmAirConditionerManage.ShowDialog();
                 this.Close();
             }

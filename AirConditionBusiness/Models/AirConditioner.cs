@@ -22,4 +22,5 @@ public partial class AirConditioner
     public string? SupplierId { get; set; }
 
     public virtual SupplierCompany? Supplier { get; set; }
+
 }
