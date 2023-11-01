@@ -60,7 +60,7 @@ namespace AirConditionerShop_TranQuangNhat
                 );
 
 
-            
+
 
             airSource.DataSource = airDtos;
 
@@ -74,7 +74,7 @@ namespace AirConditionerShop_TranQuangNhat
             txtSuppId.DataBindings.Clear();
             txtSupplyName.DataBindings.Clear();
 
-           
+
 
             txtAirConditionName.DataBindings.Add("Text", airSource, "AirConditionerName");
             txtAirConditionId.DataBindings.Add("Text", airSource, "AirConditionerId");
@@ -114,9 +114,9 @@ namespace AirConditionerShop_TranQuangNhat
 
             var airs = airConditionerRepository.findByFeatureAndQuantity(txtFeaFunSearch.Text,
               string.IsNullOrEmpty(txtQuantitySearch.Text)
-              ? -1:int.Parse(txtQuantitySearch.Text));
+              ? -1 : int.Parse(txtQuantitySearch.Text));
 
-            if(airs.Count == 0 || airs == null)
+            if (airs.Count == 0 || airs == null)
             {
                 MessageBox.Show("Not Found!");
                 loadAirCondition(new List<AirConditioner>());
@@ -135,6 +135,12 @@ namespace AirConditionerShop_TranQuangNhat
         private void btnLoad_Click(object sender, EventArgs e)
         {
             loadAirCondition(null);
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            NewItem newItem = new NewItem();
+            newItem.ShowDialog();
         }
     }
 }

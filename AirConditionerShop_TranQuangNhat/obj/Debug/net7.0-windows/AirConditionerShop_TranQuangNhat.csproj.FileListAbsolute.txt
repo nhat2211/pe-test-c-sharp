@@ -65,3 +65,4 @@ D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\bin\Debug\net7.0-windows\AutoMapper.dll
+D:\FU\C#\demo\pe-test-c-sharp.git\AirConditionerShop_TranQuangNhat\obj\Debug\net7.0-windows\AirConditionerShop_TranQuangNhat.NewItem.resources
