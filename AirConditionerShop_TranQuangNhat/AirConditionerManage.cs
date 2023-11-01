@@ -139,5 +139,11 @@ namespace AirConditionerShop_TranQuangNhat
             loadAirSearch();
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            airConditionerRepository.delete(int.Parse(txtAirConditionId.Text));
+            loadAirCondition();
+        }
     }
 }
