@@ -49,6 +49,8 @@
             messFeature = new Label();
             messDollar = new Label();
             messQuantity = new Label();
+            txtAirID = new TextBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // cbSupplierName
@@ -234,11 +236,29 @@
             messQuantity.TabIndex = 21;
             messQuantity.Text = "label13";
             // 
+            // txtAirID
+            // 
+            txtAirID.Location = new Point(780, 200);
+            txtAirID.Name = "txtAirID";
+            txtAirID.Size = new Size(125, 27);
+            txtAirID.TabIndex = 22;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(632, 207);
+            label8.Name = "label8";
+            label8.Size = new Size(121, 20);
+            label8.TabIndex = 23;
+            label8.Text = "AirConditionerID";
+            // 
             // NewItem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 545);
+            Controls.Add(label8);
+            Controls.Add(txtAirID);
             Controls.Add(messQuantity);
             Controls.Add(messDollar);
             Controls.Add(messFeature);
@@ -290,5 +310,7 @@
         private Label messFeature;
         private Label messDollar;
         private Label messQuantity;
+        private TextBox txtAirID;
+        private Label label8;
     }
 }
