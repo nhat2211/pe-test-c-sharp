@@ -53,6 +53,7 @@
             btnSearch = new Button();
             txtFeaFunSearch = new TextBox();
             txtQuantitySearch = new TextBox();
+            btnLoad = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAirCon).BeginInit();
             SuspendLayout();
             // 
@@ -192,7 +193,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(344, 354);
+            btnCreate.Location = new Point(440, 362);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(94, 29);
             btnCreate.TabIndex = 15;
@@ -201,7 +202,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(608, 354);
+            btnDelete.Location = new Point(704, 362);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 16;
@@ -211,7 +212,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(485, 354);
+            btnUpdate.Location = new Point(581, 362);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 17;
@@ -279,11 +280,22 @@
             txtQuantitySearch.Size = new Size(175, 27);
             txtQuantitySearch.TabIndex = 24;
             // 
+            // btnLoad
+            // 
+            btnLoad.Location = new Point(306, 362);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(94, 29);
+            btnLoad.TabIndex = 25;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
+            // 
             // frmAirConditionerManage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1107, 705);
+            Controls.Add(btnLoad);
             Controls.Add(txtQuantitySearch);
             Controls.Add(txtFeaFunSearch);
             Controls.Add(btnSearch);
@@ -344,5 +356,6 @@
         private Button btnSearch;
         private TextBox txtFeaFunSearch;
         private TextBox txtQuantitySearch;
+        private Button btnLoad;
     }
 }

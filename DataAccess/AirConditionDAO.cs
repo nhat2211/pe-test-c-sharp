@@ -124,7 +124,7 @@ namespace DataAccess
         public List<AirConditioner> findByFeatureAndQuantity(string feature, int quantity)
         {
             using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
-            return context.AirConditioners.Where(a => a.FeatureFunction.Equals(feature) || a.Quantity == quantity).ToList();
+            return context.AirConditioners.Include(air => air.Supplier).Where(a => a.FeatureFunction.Contains(feature) || a.Quantity == quantity).ToList();
         }
 
 

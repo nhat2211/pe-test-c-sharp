@@ -37,10 +37,16 @@ namespace AirConditionerShop_TranQuangNhat
 
         }
 
-        private void loadAirCondition()
+        private void loadAirCondition(List<AirConditioner> airConditioners)
         {
+            airSource = new BindingSource();
+            if (airConditioners != null && airConditioners.Count == 0)
+            {
+                dgvAirCon.DataSource = null;
+                return;
+            }
 
-            var airs = airConditionerRepository.findAll();
+            airConditioners = airConditioners == null ? airConditionerRepository.findAll() : airConditioners;
             var config = new MapperConfiguration(cfg =>
             {
                 AirConditionerConfig.createMap(cfg);
@@ -48,13 +54,13 @@ namespace AirConditionerShop_TranQuangNhat
 
             var mapperAirCon = config.CreateMapper();
 
-            var airDtos = airs.Select(
+            var airDtos = airConditioners.Select(
                 air => mapperAirCon
                 .Map<AirConditioner, AirConditionerDTO>(air)
                 );
 
 
-            airSource = new BindingSource();
+            
 
             airSource.DataSource = airDtos;
 
@@ -68,6 +74,7 @@ namespace AirConditionerShop_TranQuangNhat
             txtSuppId.DataBindings.Clear();
             txtSupplyName.DataBindings.Clear();
 
+           
 
             txtAirConditionName.DataBindings.Add("Text", airSource, "AirConditionerName");
             txtAirConditionId.DataBindings.Add("Text", airSource, "AirConditionerId");
@@ -83,42 +90,10 @@ namespace AirConditionerShop_TranQuangNhat
 
         }
 
-        private void loadAirSearch()
-        {
-
-            var airs = airConditionerRepository.findByFeatureAndQuantity(txtFeaFunSearch.Text,
-               int.Parse(txtQuantitySearch.Text));
-            airSource = new BindingSource();
-
-            airSource.DataSource = airs;
-
-            txtAirConditionId.DataBindings.Clear();
-            txtAirConditionName.DataBindings.Clear();
-            txtWarrantly.DataBindings.Clear();
-            txtSoundPress.DataBindings.Clear();
-            txtFeatFun.DataBindings.Clear();
-            txtQuantity.DataBindings.Clear();
-            txtDollar.DataBindings.Clear();
-            txtSuppId.DataBindings.Clear();
-            txtSupplyName.DataBindings.Clear();
-
-
-            txtAirConditionName.DataBindings.Add("Text", airSource, "AirConditionerName");
-            txtAirConditionId.DataBindings.Add("Text", airSource, "AirConditionerId");
-            txtWarrantly.DataBindings.Add("Text", airSource, "Warranty");
-            txtSoundPress.DataBindings.Add("Text", airSource, "SoundPressureLevel");
-            txtFeatFun.DataBindings.Add("Text", airSource, "FeatureFunction");
-            txtQuantity.DataBindings.Add("Text", airSource, "Quantity");
-            txtDollar.DataBindings.Add("Text", airSource, "DollarPrice");
-
-            dgvAirCon.DataSource = null;
-            dgvAirCon.DataSource = airSource;
-
-        }
 
         private void frmAirConditionerManage_Load(object sender, EventArgs e)
         {
-            loadAirCondition();
+            loadAirCondition(null);
 
         }
 
@@ -136,14 +111,30 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            loadAirSearch();
+
+            var airs = airConditionerRepository.findByFeatureAndQuantity(txtFeaFunSearch.Text,
+              string.IsNullOrEmpty(txtQuantitySearch.Text)
+              ? -1:int.Parse(txtQuantitySearch.Text));
+
+            if(airs.Count == 0 || airs == null)
+            {
+                MessageBox.Show("Not Found!");
+                loadAirCondition(new List<AirConditioner>());
+                return;
+            }
+            loadAirCondition(airs);
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             airConditionerRepository.delete(int.Parse(txtAirConditionId.Text));
-            loadAirCondition();
+            loadAirCondition(null);
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            loadAirCondition(null);
         }
     }
 }
