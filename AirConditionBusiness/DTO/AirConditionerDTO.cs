@@ -8,6 +8,7 @@ namespace AirConditionBusiness.DTO
 {
     public class AirConditionerDTO
     {
+        public int AirConditionerId { get; set; }
         public string AirConditionerName { get; set; } = null!;
 
         public string? Warranty { get; set; }
@@ -20,6 +21,6 @@ namespace AirConditionBusiness.DTO
 
         public double? DollarPrice { get; set; }
 
-        public string? SuppleName { get; set; }
+        public string? SupplierName { get; set; }
     }
 }

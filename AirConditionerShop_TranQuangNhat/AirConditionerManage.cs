@@ -1,4 +1,7 @@
-﻿using AirConditionBusiness.Models;
+﻿using AirConditionBusiness.DTO;
+using AirConditionBusiness.Mapper;
+using AirConditionBusiness.Models;
+using AutoMapper;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
@@ -38,10 +41,22 @@ namespace AirConditionerShop_TranQuangNhat
         {
 
             var airs = airConditionerRepository.findAll();
+            var config = new MapperConfiguration(cfg =>
+            {
+                AirConditionerConfig.createMap(cfg);
+            });
+
+            var mapperAirCon = config.CreateMapper();
+
+            var airDtos = airs.Select(
+                air => mapperAirCon
+                .Map<AirConditioner, AirConditionerDTO>(air)
+                );
+
 
             airSource = new BindingSource();
 
-            airSource.DataSource = airs;
+            airSource.DataSource = airDtos;
 
             txtAirConditionId.DataBindings.Clear();
             txtAirConditionName.DataBindings.Clear();
@@ -61,7 +76,7 @@ namespace AirConditionerShop_TranQuangNhat
             txtFeatFun.DataBindings.Add("Text", airSource, "FeatureFunction");
             txtQuantity.DataBindings.Add("Text", airSource, "Quantity");
             txtDollar.DataBindings.Add("Text", airSource, "DollarPrice");
-            txtSupplyName.DataBindings.Add("Text", airSource, "Supplier.SupplierName");
+            txtSupplyName.DataBindings.Add("Text", airSource, "SupplierName");
 
             dgvAirCon.DataSource = null;
             dgvAirCon.DataSource = airSource;
