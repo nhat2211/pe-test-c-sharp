@@ -40,13 +40,14 @@ namespace AirConditionerShop_TranQuangNhat
                 string.IsNullOrEmpty(txtSound.Text) ||
                 string.IsNullOrEmpty(txtFeatueFunction.Text) ||
                 string.IsNullOrEmpty(txtDollarPrice.Text) ||
-                string.IsNullOrEmpty(txtQuantity.Text))
+                string.IsNullOrEmpty(txtQuantity.Text)
+                || string.IsNullOrEmpty(cbSupplierName.Text))
             {
                 MessageBox.Show("Required all fields");
-                messAir.Show();
-                messAir.Text = REQUIRED;
-                messAir.ForeColor = Color.Red;
+                return;
+
             }
+
 
             var supplierStr = cbSupplierName.SelectedItem.ToString();
 
@@ -68,15 +69,62 @@ namespace AirConditionerShop_TranQuangNhat
             airConditioner.Quantity = int.Parse(txtQuantity.Text);
             airConditioner.SupplierId = supplierId;
 
-            airConditionerRepository.create(airConditioner);
+            if(isValidAirConditioner(airConditioner))
+            {
+                airConditionerRepository.create(airConditioner);
+                MessageBox.Show("Save Successfully!");
+            }
 
         }
 
-        private Boolean isValidAirConditioner(AirConditionerDTO airConditionerDTO)
+        private Boolean isValidAirConditioner(AirConditioner airConditioner)
         {
+            int countFail = 0;
+            if(airConditioner.DollarPrice < 0 || airConditioner.DollarPrice == 4000000
+                || airConditioner.DollarPrice > 4000000){
 
-            return false;
+                messDollar.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
+                messDollar.ForeColor = Color.Red;
+                messDollar.Show(); countFail++;
+
+
+            }
+            else
+            {
+                messDollar.Hide();
+            }
+
+            if (airConditioner.Quantity < 0 || airConditioner.Quantity == 4000000
+                || airConditioner.Quantity > 4000000)
+            {
+
+                messQuantity.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
+                messQuantity.ForeColor = Color.Red;
+                messQuantity.Show(); countFail++;
+
+
+            }
+            else
+            {
+                messQuantity.Hide();
+            }
+            var specialCharacterSet = "[()_.-]";
+            if (!Enumerable.Range(5, 90).Contains(airConditioner.AirConditionerName.Length)
+                || !Char.IsUpper(airConditioner.AirConditionerName.First()))
+            {
+                messAir.Text = "Range of 5 – 90 characters. Each word of the AirConditionerName must begin with the capital letter";
+                messAir.ForeColor = Color.Red;
+                messAir.Show(); countFail++;
+            }
+            else
+            {
+                messAir.Hide();
+            }
+
+            return countFail == 0 ? true:false;
         }
+
+      
 
         private void txtAirConditionName_Validating(object sender, CancelEventArgs e)
         {
