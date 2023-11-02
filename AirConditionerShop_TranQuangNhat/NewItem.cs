@@ -15,7 +15,7 @@ namespace AirConditionerShop_TranQuangNhat
 {
     public partial class NewItem : Form
     {
-        private static string REQUIRED = "Required";
+      
         private ISupplierCompanyRepository supplierCompanyRepository = new SupplierCompanyRepository();
         private IAirConditionerRepository airConditionerRepository = new AirConditionerRepository();
 
@@ -67,7 +67,7 @@ namespace AirConditionerShop_TranQuangNhat
             airConditioner.AirConditionerId = int.Parse(txtAirID.Text);
             airConditioner.AirConditionerName = txtAirConditionName.Text;
             airConditioner.Warranty = txtWarrantly.Text;
-            airConditioner.DollarPrice = int.Parse(txtDollarPrice.Text);
+            airConditioner.DollarPrice = double.Parse(txtDollarPrice.Text);
             airConditioner.FeatureFunction = txtFeatueFunction.Text;
             airConditioner.SoundPressureLevel = txtSound.Text;
             airConditioner.Quantity = int.Parse(txtQuantity.Text);
@@ -83,42 +83,41 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidAirConditioner(AirConditioner airConditioner)
         {
-            int countFail = 0;
-
-            if (airConditioner.Quantity < 0 || airConditioner.Quantity == 4000000
-                || airConditioner.Quantity > 4000000)
-            {
-
-                //messQuantity.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
-                //messQuantity.ForeColor = Color.Red;
-                //messQuantity.Show(); countFail++;
-
-
-            }
-            else
-            {
-                //messQuantity.Hide();
-            }
+           
             var specialCharacterSet = "[()_.-]";
-            if (!Enumerable.Range(5, 90).Contains(airConditioner.AirConditionerName.Length)
-                || !Char.IsUpper(airConditioner.AirConditionerName.First()))
-            {
-                //messAir.Text = "Range of 5 – 90 characters. Each word of the AirConditionerName must begin with the capital letter";
-                //messAir.ForeColor = Color.Red;
-                //messAir.Show(); countFail++;
-            }
-            else
-            {
 
-            }
+            return isValidConditionName(txtAirConditionName.Text) 
+                && isValidDollarPriceOrQuantity(txtDollarPrice.Text)
+                && isValidDollarPriceOrQuantity(txtQuantity.Text) ? true : false;
+        }
 
-            return countFail == 0 ? true : false;
+        private Boolean isValidConditionName(string name)
+        {
+            //string pattern = @"\p{Lu}";
+            //Regex regex = new Regex(pattern);
+
+            return Enumerable.Range(5, 90).Contains(name.Length)
+                && Char.IsUpper(name.First()) ? true : false;
+
+            //return regex.IsMatch(name) ? true: false;
         }
 
 
 
         private void txtAirConditionName_Validating(object sender, CancelEventArgs e)
         {
+            string errorMessage = "length 5 – 90,Each word must begin with the capital letter";
+            if (!isValidConditionName(txtAirConditionName.Text))
+            {
+
+                this.errorAirConName.SetError(txtAirConditionName, errorMessage);
+            }
+            else
+            {
+
+                errorAirConName.SetError(txtAirConditionName, "");
+
+            }
 
 
         }
