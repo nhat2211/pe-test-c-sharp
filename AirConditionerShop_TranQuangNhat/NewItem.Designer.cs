@@ -43,12 +43,6 @@
             txtQuantity = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            messAir = new Label();
-            messWarr = new Label();
-            messSound = new Label();
-            messFeature = new Label();
-            messDollar = new Label();
-            messQuantity = new Label();
             txtAirID = new TextBox();
             label8 = new Label();
             SuspendLayout();
@@ -151,17 +145,21 @@
             // txtDollarPrice
             // 
             txtDollarPrice.Location = new Point(780, 44);
+            txtDollarPrice.MaxLength = 10;
             txtDollarPrice.Name = "txtDollarPrice";
             txtDollarPrice.Size = new Size(125, 27);
             txtDollarPrice.TabIndex = 11;
-            txtDollarPrice.Validated += txtDollarPrice_Validated;
+            txtDollarPrice.KeyPress += txtDollarPrice_KeyPress;
+            txtDollarPrice.Validating += txtDollarPrice_Validating;
             // 
             // txtQuantity
             // 
             txtQuantity.Location = new Point(780, 118);
+            txtQuantity.MaxLength = 7;
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(125, 27);
             txtQuantity.TabIndex = 12;
+            txtQuantity.KeyPress += txtQuantity_KeyPress;
             txtQuantity.Validating += txtQuantity_Validating;
             // 
             // label6
@@ -182,66 +180,14 @@
             label7.TabIndex = 14;
             label7.Text = "Quantity";
             // 
-            // messAir
-            // 
-            messAir.AutoSize = true;
-            messAir.Location = new Point(429, 132);
-            messAir.Name = "messAir";
-            messAir.Size = new Size(50, 20);
-            messAir.TabIndex = 16;
-            messAir.Text = "label9";
-            // 
-            // messWarr
-            // 
-            messWarr.AutoSize = true;
-            messWarr.Location = new Point(429, 207);
-            messWarr.Name = "messWarr";
-            messWarr.Size = new Size(58, 20);
-            messWarr.TabIndex = 17;
-            messWarr.Text = "label10";
-            // 
-            // messSound
-            // 
-            messSound.AutoSize = true;
-            messSound.Location = new Point(429, 297);
-            messSound.Name = "messSound";
-            messSound.Size = new Size(50, 20);
-            messSound.TabIndex = 18;
-            messSound.Text = "label8";
-            // 
-            // messFeature
-            // 
-            messFeature.AutoSize = true;
-            messFeature.Location = new Point(429, 382);
-            messFeature.Name = "messFeature";
-            messFeature.Size = new Size(58, 20);
-            messFeature.TabIndex = 19;
-            messFeature.Text = "label11";
-            // 
-            // messDollar
-            // 
-            messDollar.AutoSize = true;
-            messDollar.Location = new Point(949, 48);
-            messDollar.Name = "messDollar";
-            messDollar.Size = new Size(58, 20);
-            messDollar.TabIndex = 20;
-            messDollar.Text = "label12";
-            // 
-            // messQuantity
-            // 
-            messQuantity.AutoSize = true;
-            messQuantity.Location = new Point(949, 125);
-            messQuantity.Name = "messQuantity";
-            messQuantity.Size = new Size(58, 20);
-            messQuantity.TabIndex = 21;
-            messQuantity.Text = "label13";
-            // 
             // txtAirID
             // 
             txtAirID.Location = new Point(780, 200);
+            txtAirID.MaxLength = 7;
             txtAirID.Name = "txtAirID";
             txtAirID.Size = new Size(125, 27);
             txtAirID.TabIndex = 22;
+            txtAirID.KeyPress += txtAirID_KeyPress;
             // 
             // label8
             // 
@@ -259,12 +205,6 @@
             ClientSize = new Size(1105, 545);
             Controls.Add(label8);
             Controls.Add(txtAirID);
-            Controls.Add(messQuantity);
-            Controls.Add(messDollar);
-            Controls.Add(messFeature);
-            Controls.Add(messSound);
-            Controls.Add(messWarr);
-            Controls.Add(messAir);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(txtQuantity);
@@ -304,12 +244,6 @@
         private TextBox txtQuantity;
         private Label label6;
         private Label label7;
-        private Label messAir;
-        private Label messWarr;
-        private Label messSound;
-        private Label messFeature;
-        private Label messDollar;
-        private Label messQuantity;
         private TextBox txtAirID;
         private Label label8;
     }

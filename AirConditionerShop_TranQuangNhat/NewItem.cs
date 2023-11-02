@@ -18,6 +18,10 @@ namespace AirConditionerShop_TranQuangNhat
         private static string REQUIRED = "Required";
         private ISupplierCompanyRepository supplierCompanyRepository = new SupplierCompanyRepository();
         private IAirConditionerRepository airConditionerRepository = new AirConditionerRepository();
+
+        private ErrorProvider errorDollarPrice = new ErrorProvider();
+        private ErrorProvider errorQuantity = new ErrorProvider();
+        private ErrorProvider errorAirConName = new ErrorProvider();
         public NewItem()
         {
             InitializeComponent();
@@ -69,7 +73,7 @@ namespace AirConditionerShop_TranQuangNhat
             airConditioner.Quantity = int.Parse(txtQuantity.Text);
             airConditioner.SupplierId = supplierId;
 
-            if(isValidAirConditioner(airConditioner))
+            if (isValidAirConditioner(airConditioner))
             {
                 airConditionerRepository.create(airConditioner);
                 MessageBox.Show("Save Successfully!");
@@ -80,60 +84,42 @@ namespace AirConditionerShop_TranQuangNhat
         private Boolean isValidAirConditioner(AirConditioner airConditioner)
         {
             int countFail = 0;
-            if(airConditioner.DollarPrice < 0 || airConditioner.DollarPrice == 4000000
-                || airConditioner.DollarPrice > 4000000){
-
-                messDollar.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
-                messDollar.ForeColor = Color.Red;
-                messDollar.Show(); countFail++;
-
-
-            }
-            else
-            {
-                messDollar.Hide();
-            }
 
             if (airConditioner.Quantity < 0 || airConditioner.Quantity == 4000000
                 || airConditioner.Quantity > 4000000)
             {
 
-                messQuantity.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
-                messQuantity.ForeColor = Color.Red;
-                messQuantity.Show(); countFail++;
+                //messQuantity.Text = "DollarPrice greater than or equal to 0 and less than 4 000 000";
+                //messQuantity.ForeColor = Color.Red;
+                //messQuantity.Show(); countFail++;
 
 
             }
             else
             {
-                messQuantity.Hide();
+                //messQuantity.Hide();
             }
             var specialCharacterSet = "[()_.-]";
             if (!Enumerable.Range(5, 90).Contains(airConditioner.AirConditionerName.Length)
                 || !Char.IsUpper(airConditioner.AirConditionerName.First()))
             {
-                messAir.Text = "Range of 5 – 90 characters. Each word of the AirConditionerName must begin with the capital letter";
-                messAir.ForeColor = Color.Red;
-                messAir.Show(); countFail++;
+                //messAir.Text = "Range of 5 – 90 characters. Each word of the AirConditionerName must begin with the capital letter";
+                //messAir.ForeColor = Color.Red;
+                //messAir.Show(); countFail++;
             }
             else
             {
-                messAir.Hide();
+
             }
 
-            return countFail == 0 ? true:false;
+            return countFail == 0 ? true : false;
         }
 
-      
+
 
         private void txtAirConditionName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAirConditionName.Text))
-            {
-                e.Cancel = true;
-                messAir.Show();
-                messAir.Text = REQUIRED;
-            }
+
 
         }
 
@@ -142,29 +128,26 @@ namespace AirConditionerShop_TranQuangNhat
 
         }
 
-        private void txtDollarPrice_Validated(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtDollarPrice.Text))
-            {
-
-            }
-
-
-        }
-
         private void txtQuantity_Validating(object sender, CancelEventArgs e)
         {
+            string errorMessage = "Quantity greater than or equal to 0 and less than 4 000 000";
+            if (!isValidDollarPriceOrQuantity(txtQuantity.Text))
+            {
+
+                this.errorQuantity.SetError(txtQuantity, errorMessage);
+            }
+            else
+            {
+
+                errorQuantity.SetError(txtQuantity, "");
+
+            }
 
         }
 
         private void NewItem_Load(object sender, EventArgs e)
         {
-            messAir.Hide();
-            messDollar.Hide();
-            messQuantity.Hide();
-            messFeature.Hide();
-            messWarr.Hide();
-            messSound.Hide();
+
 
             var supplierCompanies = supplierCompanyRepository.GetAll();
 
@@ -177,5 +160,65 @@ namespace AirConditionerShop_TranQuangNhat
 
 
         }
+
+        private void txtDollarPrice_Validating(object sender, CancelEventArgs e)
+        {
+            
+            string errorMessage= "DollarPrice greater than or equal to 0 and less than 4 000 000";
+            if (!isValidDollarPriceOrQuantity(txtDollarPrice.Text))
+            {
+
+                this.errorDollarPrice.SetError(txtDollarPrice, errorMessage);
+            }
+            else
+            {
+
+                errorDollarPrice.SetError(txtDollarPrice, "");
+
+            }
+        }
+
+        private Boolean isValidDollarPriceOrQuantity(string value)
+        {
+                return !string.IsNullOrEmpty(value) && !(double.Parse(value) < 0 ||
+                double.Parse(value) == 4000000
+               || double.Parse(value) > 4000000) ? true : false;
+          
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAirID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtDollarPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
+                && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
     }
+
+  
 }
