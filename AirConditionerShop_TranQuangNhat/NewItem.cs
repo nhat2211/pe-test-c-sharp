@@ -83,8 +83,6 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidAirConditioner(AirConditioner airConditioner)
         {
-           
-            var specialCharacterSet = "[()_.-]";
 
             return isValidConditionName(txtAirConditionName.Text) 
                 && isValidDollarPriceOrQuantity(txtDollarPrice.Text)
@@ -93,13 +91,10 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidConditionName(string name)
         {
-            //string pattern = @"\p{Lu}";
-            //Regex regex = new Regex(pattern);
 
             return Enumerable.Range(5, 90).Contains(name.Length)
                 && Char.IsUpper(name.First()) ? true : false;
 
-            //return regex.IsMatch(name) ? true: false;
         }
 
 
