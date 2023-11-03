@@ -91,9 +91,23 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidConditionName(string name)
         {
+            string[] arrName = name.Split(' ');
+            var count = 0;
+
+            for(string name: arrName)
+            {
+                if (Char.IsUpper(name.First()))
+                {
+                    count++;
+                }
+            }
+
+             
+            //return Enumerable.Range(5, 90).Contains(name.Length)
+               // && Char.IsUpper(name.First()) ? true : false;
 
             return Enumerable.Range(5, 90).Contains(name.Length)
-                && Char.IsUpper(name.First()) ? true : false;
+               && count == arrName.Length ? true : false;
 
         }
 
