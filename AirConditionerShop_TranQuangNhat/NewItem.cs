@@ -22,9 +22,16 @@ namespace AirConditionerShop_TranQuangNhat
         private ErrorProvider errorDollarPrice = new ErrorProvider();
         private ErrorProvider errorQuantity = new ErrorProvider();
         private ErrorProvider errorAirConName = new ErrorProvider();
+        private AirConditioner airConditioner;
         public NewItem()
         {
             InitializeComponent();
+        }
+
+        public NewItem(AirConditioner airConditioner)
+        {
+            InitializeComponent();
+            this.airConditioner = airConditioner;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,12 +98,12 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidConditionName(string name)
         {
-            string[] arrName = name.Split(@"\s+");
+            string[] arrName = name.Split(" ");
             var count = 0;
 
             foreach(string element in arrName)
             {
-                if (Char.IsUpper(name.First()))
+                if (Char.IsUpper(element.First()))
                 {
                     count++;
                 }
@@ -155,14 +162,30 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void NewItem_Load(object sender, EventArgs e)
         {
-
-
-            var supplierCompanies = supplierCompanyRepository.GetAll();
-
-            supplierCompanies.ForEach(company =>
+            if(this.airConditioner == null)
             {
-                cbSupplierName.Items.Add(company.SupplierId + "-" + company.SupplierName);
-            });
+                var supplierCompanies = supplierCompanyRepository.GetAll();
+
+                supplierCompanies.ForEach(company =>
+                {
+                    cbSupplierName.Items.Add(company.SupplierId + "-" + company.SupplierName);
+                });
+            }
+            else
+            {
+                //update
+                cbSupplierName.Text = this.airConditioner.Supplier.SupplierId + "-"
+                    + this.airConditioner.Supplier.SupplierName;
+                txtAirConditionName.Text = this.airConditioner.AirConditionerName;
+                txtWarrantly.Text = this.airConditioner.Warranty;
+                txtDollarPrice.Text = this.airConditioner.DollarPrice.ToString();
+                txtQuantity.Text = this.airConditioner.Quantity.ToString();
+                txtFeatueFunction.Text = this.airConditioner.FeatureFunction;
+                txtSound.Text = this.airConditioner.SoundPressureLevel;
+                txtAirID.Text = this.airConditioner.AirConditionerId.ToString();
+            }
+
+            
 
 
 

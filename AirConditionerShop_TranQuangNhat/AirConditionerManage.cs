@@ -136,14 +136,14 @@ namespace AirConditionerShop_TranQuangNhat
             {
                 airConditionerRepository.delete(int.Parse(txtAirConditionId.Text));
                 loadAirCondition(null);
-               
+
             }
             else
             {
                 return;
             }
-           
-           
+
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -155,6 +155,18 @@ namespace AirConditionerShop_TranQuangNhat
         {
             NewItem newItem = new NewItem();
             newItem.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+           
+
+            var airUpdate = airConditionerRepository.findById(int.Parse(txtAirConditionId.Text));
+
+            NewItem updateForm = new NewItem(airUpdate);
+            updateForm.Text = "Update";
+            updateForm.ShowDialog();
+
         }
     }
 }

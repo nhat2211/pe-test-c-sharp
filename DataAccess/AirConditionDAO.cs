@@ -101,7 +101,7 @@ namespace DataAccess
             try
             {
                 using AirConditionerShop2023DbContext context = new AirConditionerShop2023DbContext();
-                air = context.AirConditioners.SingleOrDefault(a => a.AirConditionerId == id);
+                air = context.AirConditioners.Include(a => a.Supplier).SingleOrDefault(a => a.AirConditionerId == id);
 
             }
             catch(Exception ex)
