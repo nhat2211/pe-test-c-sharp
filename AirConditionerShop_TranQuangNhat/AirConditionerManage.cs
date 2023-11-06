@@ -128,8 +128,22 @@ namespace AirConditionerShop_TranQuangNhat
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            airConditionerRepository.delete(int.Parse(txtAirConditionId.Text));
-            loadAirCondition(null);
+            string message = "Are you sure to delete?";
+            string title = "Delete Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                airConditionerRepository.delete(int.Parse(txtAirConditionId.Text));
+                loadAirCondition(null);
+               
+            }
+            else
+            {
+                return;
+            }
+           
+           
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

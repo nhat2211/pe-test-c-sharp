@@ -91,10 +91,10 @@ namespace AirConditionerShop_TranQuangNhat
 
         private Boolean isValidConditionName(string name)
         {
-            string[] arrName = name.Split(' ');
+            string[] arrName = name.Split(@"\s+");
             var count = 0;
 
-            for(string name: arrName)
+            foreach(string element in arrName)
             {
                 if (Char.IsUpper(name.First()))
                 {
