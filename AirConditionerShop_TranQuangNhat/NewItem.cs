@@ -173,6 +173,12 @@ namespace AirConditionerShop_TranQuangNhat
             }
             else
             {
+                var supplierCompanies = supplierCompanyRepository.GetAll();
+
+                supplierCompanies.ForEach(company =>
+                {
+                    cbSupplierName.Items.Add(company.SupplierId + "-" + company.SupplierName);
+                });
                 //update
                 cbSupplierName.Text = this.airConditioner.Supplier.SupplierId + "-"
                     + this.airConditioner.Supplier.SupplierName;
